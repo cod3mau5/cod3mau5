@@ -245,7 +245,7 @@
     }
 
     .popup {
-        margin: 30% auto;
+        margin: 23% auto;
         padding: 20px;
         background: #fff;
         border-radius: 5px;
