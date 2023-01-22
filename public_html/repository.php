@@ -95,11 +95,13 @@
             margin-top: 1.5rem;
             font-size: 1.8rem;
             color: #b2becd;
+            max-height: 277px;
+            overflow-y: scroll;
         }
 
         @media (min-width: 768px) {
             .cards {
-                height: 100vh;
+                height: auto;
                 align-items: center;
             }
 
@@ -142,11 +144,12 @@
     <section class="cards">
     <div class="grid__container">
         <h1 class="grid__title"><span>SEE OUR WORKS</span></h1>
+        
         <!-- Grid item START -->
         <div class="grid__item">
-            <h2 class="grid__item-title">Mahi Fishing Charters</h2>
+            <h2 class="grid__item-title">Cabo Drivers</h2>
             <p class="grid__item-excerpt">
-                <img src="/img/Screenshot_MahiFishingCharters.jpg" class="w-100">
+                <img src="/img/CABODRIVER.png" class="w-100">
             </p>
             <h3 class="grid__item-category">e-commerce for fishing reservation</h3>
         </div>
@@ -154,26 +157,91 @@
 
         <!-- Grid item START -->
         <div class="grid__item">
-        <h2 class="grid__item-title">Coming soon...</h2>
-
+        <h2 class="grid__item-title">Cabo Wedding Films</h2>
+            <p class="grid__item-excerpt">
+                <img src="/img/caboweddingfilms.png" class="w-100">
+            </p>
+            <h3 class="grid__item-category">e-commerce for fishing reservation</h3>
+            <p class="grid__item-excerpt"></p>
         </div>
         <!-- Grid item END -->
 
         <!-- Grid item START -->
         <div class="grid__item">
-        <h2 class="grid__item-title">Coming soon...</h2>
-        <p class="grid__item-excerpt">
-         
-        </p>
+            <h2 class="grid__item-title">Best Tours Cabo</h2>
+            <p class="grid__item-excerpt">
+                <img src="/img/Best-Tours-Cabo.png" class="w-100">
+            </p>
+            <h3 class="grid__item-category">e-commerce for fishing reservation</h3>
+            <p class="grid__item-excerpt"></p>
         </div>
         <!-- Grid item END -->
 
         <!-- Grid item START -->
         <div class="grid__item">
-        <h2 class="grid__item-title">Coming soon...</h2>
-
+            <h2 class="grid__item-title">Punta Azul</h2>
+            <p class="grid__item-excerpt">
+                <img src="/img/puntazul.png" class="w-100">
+            </p>
+            <h3 class="grid__item-category">e-commerce for fishing reservation</h3>
+            <p class="grid__item-excerpt"></p>
         </div>
         <!-- Grid item END -->
+
+        <!-- Grid item START -->
+        <div class="grid__item">
+            <h2 class="grid__item-title">Tequisquiapan</h2>
+            <p class="grid__item-excerpt">
+                <img src="/img/tequisquiapan.png" class="w-100">
+            </p>
+            <h3 class="grid__item-category">e-commerce for fishing reservation</h3>
+            <p class="grid__item-excerpt"></p>
+        </div>
+        <!-- Grid item END -->
+
+        <!-- Grid item START -->
+        <div class="grid__item">
+            <h2 class="grid__item-title">Dra. Laura Báez</h2>
+            <p class="grid__item-excerpt">
+                <img src="/img/dralaura.png" class="w-100">
+            </p>
+            <h3 class="grid__item-category">e-commerce for fishing reservation</h3>
+            <p class="grid__item-excerpt"></p>
+        </div>
+        <!-- Grid item END -->
+
+        <!-- Grid item START -->
+        <div class="grid__item">
+            <h2 class="grid__item-title">Turiscabos</h2>
+            <p class="grid__item-excerpt">
+                <img src="/img/turiscabos.png" class="w-100">
+            </p>
+            <h3 class="grid__item-category">e-commerce for fishing reservation</h3>
+            <p class="grid__item-excerpt"></p>
+        </div>
+        <!-- Grid item END -->
+
+        <!-- Grid item START -->
+        <div class="grid__item">
+            <h2 class="grid__item-title">Mahi Fishing Charters</h2>
+            <p class="grid__item-excerpt">
+                <img src="/img/mahifishing.png" class="w-100">
+            </p>
+            <h3 class="grid__item-category">e-commerce for fishing reservation</h3>
+        </div>
+        <!-- Grid item END -->
+
+        <!-- Grid item START -->
+        <div class="grid__item">
+            <h2 class="grid__item-title">Polaris Refrigeracion</h2>
+            <p class="grid__item-excerpt">
+                <img src="/img/polaris.png" class="w-100">
+            </p>
+            <h3 class="grid__item-category">e-commerce for fishing reservation</h3>
+            <p class="grid__item-excerpt"></p>
+        </div>
+        <!-- Grid item END -->
+
     </div>
     </section>
 </body>
