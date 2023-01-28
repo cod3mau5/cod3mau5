@@ -81,6 +81,7 @@
                 max-width: 100%;
                 grid-template-columns: repeat(1, 1fr);
             }
+
         }
 
         .grid__container_footer .footer_img{
@@ -105,6 +106,11 @@
             border-radius: 10px;
             width: 40%;
             margin: 0 auto;
+        }
+        @media (max-width:768px) {
+            .grid__title span {
+                width: 100%;
+            }
         }
 
         .grid__item {
@@ -239,7 +245,7 @@
             font-size: 2rem;
         }
     </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -384,7 +390,7 @@
                                         height="auto"/>
                                 </noscript>
                             </p>
-                            <p>codemau5. Estudio de programacion que ofrece servicios en todo el mundo.</p>
+                            <p>codemau5. Programming studio that offers services worldwide.</p>
                         </div>
                     </aside>
                     <aside id="ci-socials-2" class="widget widget_ci-socials">
