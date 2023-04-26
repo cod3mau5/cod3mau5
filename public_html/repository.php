@@ -405,6 +405,9 @@
                                 <a href="https://www.tiktok.com/@codemau5" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
                             </li>
                             <li>
+                                <a href="https://www.youtube.com/@codemau5159" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+                            </li>
+                            <li>
                                 <a href="https://t.me/cod3mau5" class="social-icon" target="_blank"><i class="fab fa-telegram"></i></a>
                             </li>
                         </ul>
@@ -451,10 +454,18 @@
 
             </div>
         </div>
-
+        <!-- Tomas Mauricio Arana, desarrollador full-stack PHP y JS, experimentado en tecnologías nuevas y seguridad informática. Ofrece servicios de maquetación de sitios web, implementación de métodos de pago, sistemas de reservaciones y más. Conocimientos en Laravel, Vue JS, MySQL, Android y Kotlin. Contacto: +526241556455, code.bit.mau@gmail.com. Conéctate en LinkedIn y Twitter. ¡Transformemos tus ideas en realidad! 
+        
+        Experto en programación web full-stack, con 4+ años de experiencia en el stack LAMP (Linux, Apache, MySQL y PHP). Ofrezco clases prácticas y personalizadas en PHP, JavaScript, HTML5, CSS3 y SQL. Aprende a desarrollar sitios web responsivos y completos. ¡Mejora tus habilidades y haz realidad tus proyectos!
+    -->
     </section>
 
     <script src="https://www.starofservice.mx/widgets/scripts?id=d8e7c84e-706f-3ab8-8e27-46d54697f199&widget_type=reviews-widget&locale=es"></script>
+<script>
+    window.addEventListener('scroll', function() {
+        console.log(scrollY);
+    });
+</script>
 </body>
 
 </html>
