@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     var typed=[];    
     let strings=[
         '<h2>como cotizar?</h2>Es muy facil usar esta herramienta interactiva, solo tienes que arrastrar los productos que estan a la izquierda (el vino, los quesos, etc) al carrito azul de la derecha, cuando toques un producto por primera vez, se te abrira una ventana con mas informacion de lo que representa el producto en una web, asi puedes conocer que estas agregando a tu proyecto y siempre veras en la pantalla (arriba del raton), el precio actualizado con los productos que llevas.',
-        '<h2>Y ya que termine?</h2>Cuando termines de agregar tus productos aparecera un boton de enviar cotizacion asi el equipo de codemau5 podra valorar el proyecto, (un 93% de casos los precios son exactamente iguales).',
+        '<h2>Y ya que termine?</h2>Cuando termines de agregar tus productos aparecera un boton de enviar cotizacion asi el equipo de codemau5 podra valorar el proyecto, (mas del 90% de casos los precios son exactamente iguales).',
         '<h2>IMPORTANTE!</h2> Lo que mostramos aquí son solo una estimación de los precios. El costo final dependerá de los detalles y particularidades de cada proyecto. Así que no te preocupes si esto no es exactamente lo que buscabas, la cotización final siempre será proporcionada a través de un documento oficial preparado por codemau5. ¡Tranquilo, siempre buscaremos adaptarnos lo mas posible al valor estimado por esta herramienta y estamos para ayudarte a que tu proyecto sea todo un éxito!',
         '<h2>Listo?</h2> ya puedes cotizar tu proyecto!!!',
     ];
