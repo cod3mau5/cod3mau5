@@ -199,32 +199,6 @@ function windowResized() {
     windowHeight = window.innerHeight;
     checkOrientation();
     resizeCanvas(windowWidth, windowHeight);
-  
-    // Actualiza las posiciones y tamaños de los elementos que dependen de las dimensiones de la ventana
-    boundaries[0].update(-140, height / 2, 300, height);
-    boundaries[1].update(width + 140, height / 2, 300, height);
-    boundaries[2].update(width / 2, height + 120, width, 300);
-    boundaries[3].update(width / 2, -140, width, 300);
-  
-    let planksWidth = width / 9;
-    planks[0].update(width / 11.35, height / 1.91, planksWidth, 9);
-    planks[1].update(width / 4.75, height / 1.91, planksWidth, 9);
-    planks[2].update(width / 11.35, height / 1.56, planksWidth, 9);
-    planks[3].update(width / 4.75, height / 1.56, planksWidth, 9);
-    planks[4].update(width / 11.35, height / 1.31, planksWidth, 9);
-    planks[5].update(width / 4.75, height / 1.31, planksWidth, 9);
-    planks[6].update(width / 11.35, height / 1.135, planksWidth, 9);
-    planks[7].update(width / 4.75, height / 1.135, planksWidth, 9);
-  
-    cart.update(width - (width / 5), height / 1.35, width / 3.8, height / 2.5);
-  
-    wine.update(planks[0].body.position.x, planks[0].body.position.y - height / 50, width / 40, height / 12);
-    cheese.update(planks[1].body.position.x, planks[1].body.position.y - height / 50, width / 20, height / 13.5);
-    blueCheese.update(planks[2].body.position.x, planks[2].body.position.y - height / 50, width / 20, height / 13.5);
-    purpleCheese.update(planks[3].body.position.x, planks[3].body.position.y - height / 50, width / 20, height / 13.5);
-    sausage.update(planks[4].body.position.x, planks[4].body.position.y - height / 50, width / 17, height / 16);
-    gel.update(planks[5].body.position.x, planks[5].body.position.y - height / 50, width / 40, height / 12);
-    milk.update(planks[6].body.position.x, planks[6].body.position.y - height / 50, width / 40, height / 12);
  
 }
 
