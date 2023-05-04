@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
         if (!typedIntro.typingComplete) {
             return;
         }else{
-            console.log(typedIntro);
             typedIntro.destroy();
         }
         if(i<strings.length){

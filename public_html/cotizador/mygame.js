@@ -1,19 +1,4 @@
-target=document.querySelector('body');
-marginLeft=window.getComputedStyle(target).getPropertyValue("margin-left");
-marginRight=window.getComputedStyle(target).getPropertyValue("margin-right");
-marginLeft=Number(marginLeft.replace(/\D/g, ''));
-marginRight=Number(marginRight.replace(/\D/g, ''));
-marginX=marginLeft+marginRight;
-
-marginTop=window.getComputedStyle(target).getPropertyValue("margin-top");
-marginBottom=window.getComputedStyle(target).getPropertyValue("margin-bottom");
-marginTop=Number(marginTop.replace(/\D/g, ''));
-marginBottom=Number(marginBottom.replace(/\D/g, ''));
-marginY=marginTop+marginBottom;
-
-
-windowHeight=document.getElementsByTagName('body')[0].clientHeight;
-windowWidth=document.getElementsByTagName('body')[0].clientWidth;
+let windowWidth, windowHeight;
 
 // module aliases
 var Engine= Matter.Engine,
@@ -47,8 +32,11 @@ function preload(){
 }
 
 function setup(){
-
-    var canvas=createCanvas(windowWidth - (marginX + (marginX/2)) ,windowHeight - (marginY + (marginY/2)));
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+    var canvas=createCanvas(windowWidth ,windowHeight );
+    canvas.style('display', 'block');
+    // document.body.style.overflow = 'hidden';
     engine= Engine.create();
     world=engine.world;
     
@@ -217,3 +205,9 @@ function calculateTotal(p1Exist,p2Exist,p3Exist,p4Exist,p5Exist,p6Exist,p7Exist,
     let p8=p8Exist?250:0;
     return p1+p2+p3+p4+p5+p6+p7+p8;
 }
+
+function windowResized() {
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+    resizeCanvas(windowWidth, windowHeight);
+  }
