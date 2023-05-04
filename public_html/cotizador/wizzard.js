@@ -1,4 +1,46 @@
-document.addEventListener('DOMContentLoaded', ()=> {
+document.getElementById('message').innerHTML=`
+    <style>
+        #start{
+            background-color:#000000;
+            background-image:url(Logo.png);
+            background-size:20%;
+        }
+        #message .message-container, #message .message-container button{
+            display:flex; 
+            justify-content:space-evenly;
+            margin:0;
+        }
+        #message .message-container button{
+            margin-top:1.5rem;
+            margin-bottom:.5rem;
+        }
+    </style>
+    <h2>Idioma/language</h2>
+    <div class="message-container">
+        <button class="bright" id="es">
+            Español
+        </button>
+        <button class="bright" id="eng">
+            English
+        </button>
+    </div>
+`;
+document.getElementById('eng').addEventListener('click',()=>{
+    document.getElementById('start').style='display:none;';
+});
+document.getElementById('es').addEventListener('click',()=>{
+    sessionStorage.setItem("lang","es");
+    if(checkOrientation()){
+        document.getElementById('message').innerHTML=`
+            <p></p>
+            <button class='bright' id="next">
+                siguiente
+            </button>
+        `;
+        startTutorial();
+    }
+});
+function startTutorial(){
     var typeSpeed= 0;
     const typedOptionsIntro = {
         strings: [
@@ -44,16 +86,52 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 startDelay: 0,
                 loop: false,
                 showCursor: true,
-                // smartBackspace:false,
             };
             typed.push(new Typed('#message p', typedOptions));
             (i==strings.length-1) ?btnNext.innerHTML="finalizar":'';
             i++;
         }else{
             typed[i-1].destroy();
-            document.querySelector('#start').style="display:none;";
+            checkOrientation();
         }
     });
-  
-});
+}
+function checkOrientation(){
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+    console.log(sessionStorage.getItem("lang"));
+    if(sessionStorage.getItem("lang")==null){return false;}
+    console.log(windowHeight);
+    console.log(windowWidth)
+    if(windowHeight > windowWidth){
+        document.querySelector('#start').style="display:block;";
+        document.getElementById('message').innerHTML=`
+            <style>
+                #start{
+                    background-color:#000000;
+                    background-image:url(Logo.png);
+                    background-size:20%;
+                }
+                #message .message-container, #message .message-container button{
+                    display:flex; 
+                    justify-content:space-evenly;
+                    margin:0;
+                }
+                #message .message-container button{
+                    margin-top:1.5rem;
+                    margin-bottom:.5rem;
+                }
+            </style>
+            <h2>Por favor, gira tu celular en direccion horizontal</h2>
 
+        `;
+        document.querySelector('canvas').style="display:none;";
+        return false;
+    }else{
+        document.querySelector('canvas').style="display:block;";
+        document.querySelector('#start').style="display:none;";
+        
+    }
+}
+
+  

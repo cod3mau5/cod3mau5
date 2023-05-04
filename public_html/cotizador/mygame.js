@@ -1,5 +1,4 @@
-let windowWidth, windowHeight;
-
+var windowWidth, windowHeight;
 // module aliases
 var Engine= Matter.Engine,
     Constraint=Matter.Constraint,
@@ -8,11 +7,12 @@ var Engine= Matter.Engine,
     World=Matter.World,
     Bodies=Matter.Bodies;
 
+
 var engine, world, 
 planks=[],boundaries=[],
 ground,mConstraint,bkgImg,cartImg;
 
-let total = 0;
+var total = 0;
 var messageTotal=document.querySelector('#total span');
 var containerTotal=document.querySelector('#total');
 
@@ -35,24 +35,25 @@ function setup(){
     windowWidth = window.innerWidth;
     windowHeight = window.innerHeight;
     var canvas=createCanvas(windowWidth ,windowHeight );
+    checkOrientation();
     canvas.style('display', 'block');
     // document.body.style.overflow = 'hidden';
     engine= Engine.create();
     world=engine.world;
-    
     wallLeft=boundaries.push(new Barrier(-140,height/2,300,height,0));
     wallRight=boundaries.push(new Barrier(width + 140,height/2,300,height,0));
     ground=boundaries.push(new Barrier(width/2,height + 120,width, 300 ,0));
     roof=boundaries.push(new Barrier(width/2,-140,width, 300 ,0));
 
-    planks.push(new Plank(width/11.35,height/1.91,155,9));
-    planks.push(new Plank(width/4.75,height/1.91,155,9));
-    planks.push(new Plank(width/11.35,height/1.56,155,9));
-    planks.push(new Plank(width/4.75,height/1.56,155,9));
-    planks.push(new Plank(width/11.35,height/1.31,155,9));
-    planks.push(new Plank(width/4.75,height/1.31,155,9));
-    planks.push(new Plank(width/11.35,height/1.135,155,9));
-    planks.push(new Plank(width/4.75,height/1.135,155,9));
+    let planksWidth=width/9;
+    planks.push(new Plank(width/11.35,height/1.91,planksWidth,9));
+    planks.push(new Plank(width/4.75,height/1.91,planksWidth,9));
+    planks.push(new Plank(width/11.35,height/1.56,planksWidth,9));
+    planks.push(new Plank(width/4.75,height/1.56,planksWidth,9));
+    planks.push(new Plank(width/11.35,height/1.31,planksWidth,9));
+    planks.push(new Plank(width/4.75,height/1.31,planksWidth,9));
+    planks.push(new Plank(width/11.35,height/1.135,planksWidth,9));
+    planks.push(new Plank(width/4.75,height/1.135,planksWidth,9));
 
 
     winePosX=planks[0].body.position.x;
@@ -60,7 +61,6 @@ function setup(){
 
     cheesePosX=planks[1].body.position.x;
     cheesePosY=planks[1].body.position.y - height/50;
-
     blueCheesePosX=planks[2].body.position.x;
     blueCheesePosY=planks[2].body.position.y - height/50;
 
@@ -79,7 +79,7 @@ function setup(){
     saucePosX=planks[7].body.position.x;
     saucePosY=planks[7].body.position.y - height/50;
 
-    cart=new Cart(width- (width/5),height/1.35,width/3.5,height/2.3);
+    cart=new Cart(width- (width/5),height/1.35,width/3.8,height/2.5);
 
     sausage= new Sausage(sasuagePosX,sasuagePosY,width/17,height/16);
     sauce= new Sauce(saucePosX,saucePosY,width/40,height/12);
@@ -113,20 +113,20 @@ function draw(){
         planks[i].show();
     }
 
-   var limitLeftX=cart.cartLeftWall.vertices[0].x;
-   var limitLeftY=cart.cartLeftWall.vertices[0].y;
-   var limitRighttX=cart.cartRightWall.vertices[0].x;
-   var limitBottomY=cart.cartLeftWall.vertices[3].y;
+    var limitLeftX=cart.cartLeftWall.vertices[0].x;
+    var limitLeftY=cart.cartLeftWall.vertices[0].y;
+    var limitRighttX=cart.cartRightWall.vertices[0].x;
+    var limitBottomY=cart.cartLeftWall.vertices[3].y;
 
 
-   milk.show();
-   wine.show();
-   gel.show();
-   sauce.show();
-   sausage.show();
-   cheese.show();
-   blueCheese.show();
-   purpleCheese.show();
+    milk.show();
+    wine.show();
+    gel.show();
+    sauce.show();
+    sausage.show();
+    cheese.show();
+    blueCheese.show();
+    purpleCheese.show();
 
    
     let p1Exist = (
@@ -194,6 +194,40 @@ function draw(){
 
 }
 
+function windowResized() {
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+    checkOrientation();
+    resizeCanvas(windowWidth, windowHeight);
+  
+    // Actualiza las posiciones y tamaños de los elementos que dependen de las dimensiones de la ventana
+    boundaries[0].update(-140, height / 2, 300, height);
+    boundaries[1].update(width + 140, height / 2, 300, height);
+    boundaries[2].update(width / 2, height + 120, width, 300);
+    boundaries[3].update(width / 2, -140, width, 300);
+  
+    let planksWidth = width / 9;
+    planks[0].update(width / 11.35, height / 1.91, planksWidth, 9);
+    planks[1].update(width / 4.75, height / 1.91, planksWidth, 9);
+    planks[2].update(width / 11.35, height / 1.56, planksWidth, 9);
+    planks[3].update(width / 4.75, height / 1.56, planksWidth, 9);
+    planks[4].update(width / 11.35, height / 1.31, planksWidth, 9);
+    planks[5].update(width / 4.75, height / 1.31, planksWidth, 9);
+    planks[6].update(width / 11.35, height / 1.135, planksWidth, 9);
+    planks[7].update(width / 4.75, height / 1.135, planksWidth, 9);
+  
+    cart.update(width - (width / 5), height / 1.35, width / 3.8, height / 2.5);
+  
+    wine.update(planks[0].body.position.x, planks[0].body.position.y - height / 50, width / 40, height / 12);
+    cheese.update(planks[1].body.position.x, planks[1].body.position.y - height / 50, width / 20, height / 13.5);
+    blueCheese.update(planks[2].body.position.x, planks[2].body.position.y - height / 50, width / 20, height / 13.5);
+    purpleCheese.update(planks[3].body.position.x, planks[3].body.position.y - height / 50, width / 20, height / 13.5);
+    sausage.update(planks[4].body.position.x, planks[4].body.position.y - height / 50, width / 17, height / 16);
+    gel.update(planks[5].body.position.x, planks[5].body.position.y - height / 50, width / 40, height / 12);
+    milk.update(planks[6].body.position.x, planks[6].body.position.y - height / 50, width / 40, height / 12);
+ 
+}
+
 function calculateTotal(p1Exist,p2Exist,p3Exist,p4Exist,p5Exist,p6Exist,p7Exist,p8Exist){
     let p1=p1Exist?50:0;
     let p2=p2Exist?100:0;
@@ -205,9 +239,3 @@ function calculateTotal(p1Exist,p2Exist,p3Exist,p4Exist,p5Exist,p6Exist,p7Exist,
     let p8=p8Exist?250:0;
     return p1+p2+p3+p4+p5+p6+p7+p8;
 }
-
-function windowResized() {
-    windowWidth = window.innerWidth;
-    windowHeight = window.innerHeight;
-    resizeCanvas(windowWidth, windowHeight);
-  }
