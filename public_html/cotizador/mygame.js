@@ -68,38 +68,40 @@ function setup(){
 
 
     winePosX=planks[0].body.position.x;
-    winePosY=planks[0].body.position.y - 50;
+    winePosY=planks[0].body.position.y - height/50;
 
     cheesePosX=planks[1].body.position.x;
-    cheesePosY=planks[1].body.position.y - 50;
+    cheesePosY=planks[1].body.position.y - height/50;
 
     blueCheesePosX=planks[2].body.position.x;
-    blueCheesePosY=planks[2].body.position.y - 50;
+    blueCheesePosY=planks[2].body.position.y - height/50;
 
     purpleCheesePosX=planks[3].body.position.x;
-    purpleCheesePosY=planks[3].body.position.y - 50;
+    purpleCheesePosY=planks[3].body.position.y - height/50;
     
     sasuagePosX=planks[4].body.position.x;
-    sasuagePosY=planks[4].body.position.y - 50;
+    sasuagePosY=planks[4].body.position.y - height/50;
 
     gelPosX=planks[5].body.position.x;
-    gelPosY=planks[5].body.position.y - 50;
+    gelPosY=planks[5].body.position.y - height/50;
 
     milkPosX=planks[6].body.position.x;
-    milkPosY=planks[6].body.position.y - 50;
+    milkPosY=planks[6].body.position.y - height/50;
     
     saucePosX=planks[7].body.position.x;
-    saucePosY=planks[7].body.position.y - 50;
+    saucePosY=planks[7].body.position.y - height/50;
 
-    sausage= new Sausage(sasuagePosX,sasuagePosY,80,40);
-    sauce= new Sauce(saucePosX,saucePosY,35,70);
-    gel= new Gel(gelPosX,gelPosY,35,70);
-    milk= new Milk(milkPosX,milkPosY,35,70);
-    wine= new Wine(winePosX,winePosY,35,70);
-    cheese= new Cheese(cheesePosX,cheesePosY,70,55);
-    blueCheese= new BlueCheese(blueCheesePosX,blueCheesePosY,70,55);
-    purpleCheese= new PurpleCheese(purpleCheesePosX,purpleCheesePosY,70,55);
-    cart=new Cart(width -280,height/1.42,400,400);
+    cart=new Cart(width- (width/5),height/1.35,width/3.5,height/2.3);
+
+    sausage= new Sausage(sasuagePosX,sasuagePosY,width/17,height/16);
+    sauce= new Sauce(saucePosX,saucePosY,width/40,height/12);
+    gel= new Gel(gelPosX,gelPosY,width/40,height/12);
+    milk= new Milk(milkPosX,milkPosY,width/40,height/12);
+    wine= new Wine(winePosX,winePosY,width/40,height/12);
+    cheese= new Cheese(cheesePosX,cheesePosY,width/20,height/13.5);
+    blueCheese= new BlueCheese(blueCheesePosX,blueCheesePosY,width/20,height/13.5);
+    purpleCheese= new PurpleCheese(purpleCheesePosX,purpleCheesePosY,width/20,height/13.5);
+    
 
     var canvasMouse=Mouse.create(canvas.elt);
     canvasMouse.pixelRatio=pixelDensity();

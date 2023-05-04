@@ -9,18 +9,38 @@
       type="text/css">
     <title>NewGame</title>
     <style>
+        body{
+            margin: 0!important;
+        }
         #total{
             position: absolute;
-            top: 37%;
-            left: 48%;
+            top: 36.5%;
+            left: 48.4%;
+            width: 12%;
             transform: translate(-50%, -50%);
-            font-size: large;
             color: greenyellow;
-            display: block;
+            font-size: 74%;
+            height: 9.7%;
+            
         }
         #total span{
-            font-size: 3em;
-            color: greenyellow;
+            font-size: 200%;
+        }
+        @media(min-width:1024px) {
+            #total{
+                font-size: 96%;
+            }
+            #total span{
+                font-size: 280%;
+            }
+        }
+        @media(min-width:1200px) {
+            #total{
+                font-size: 102%;
+            }
+            #total span{
+                font-size: 300%;
+            }
         }
         #start{
             background-color: rgba(247, 240, 232, 0.308);
@@ -34,7 +54,8 @@
         }
         #message{
             background-color: rgba(255, 255, 255, 0.952);
-            width: 30%;
+            width: 40%;
+            max-width: 450px;
             position: absolute;
             top: 24%;
             left: 50%;
@@ -45,48 +66,45 @@
             border-color: rgb(127, 127, 127);
             background-color: rgb(215, 215, 215);
             padding: 5px 45px 20px 45px;
-            font-size: 12px;
             font-smooth: never;
             -webkit-font-smoothing: none;
             font-family: 'pokemon-font', monospace;
         }
-
-
         .bright {
-        display: block;
-        text-align: center;
-        background: #00CC66;
-        -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5), inset 0 1px #33ff99, inset 0 1em 2em rgba(51, 255, 153, 0.4), inset 0 -0.5em 1em rgba(0, 102, 51, 0.4);
-        -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5), inset 0 1px #33ff99, inset 0 1em 2em rgba(51, 255, 153, 0.4), inset 0 -0.5em 1em rgba(0, 102, 51, 0.4);
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5), inset 0 1px #33ff99, inset 0 1em 2em rgba(51, 255, 153, 0.4), inset 0 -0.5em 1em rgba(0, 102, 51, 0.4);
-        border: solid 1px #fff;
-        border: solid 1px #00CC66;
-        text-decoration: none;
-        color: #004d26;
-        text-shadow: 1px 1px 1px rgba(77, 255, 166, 0.55);
-        font-size: 16px;
-        -moz-border-radius: 6px;
-        -webkit-border-radius: 6px;
-        border-radius: 6px;
-        line-height: 1.5;
-        margin: 20px 0 0 auto;
-        padding:.3rem 1rem; 
+            display: block;
+            text-align: center;
+            background: #00CC66;
+            -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5), inset 0 1px #33ff99, inset 0 1em 2em rgba(51, 255, 153, 0.4), inset 0 -0.5em 1em rgba(0, 102, 51, 0.4);
+            -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5), inset 0 1px #33ff99, inset 0 1em 2em rgba(51, 255, 153, 0.4), inset 0 -0.5em 1em rgba(0, 102, 51, 0.4);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5), inset 0 1px #33ff99, inset 0 1em 2em rgba(51, 255, 153, 0.4), inset 0 -0.5em 1em rgba(0, 102, 51, 0.4);
+            border: solid 1px #fff;
+            border: solid 1px #00CC66;
+            text-decoration: none;
+            color: #004d26;
+            text-shadow: 1px 1px 1px rgba(77, 255, 166, 0.55);
+            font-size: 16px;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            line-height: 1.5;
+            margin: 20px 0 0 auto;
+            padding:.3rem 1rem; 
         }
         .bright:hover, .bright.active, .bright.active-trail {
-        color: #00331a;
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        text-shadow: none;
-        border: solid 1px #00994d;
+            color: #00331a;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            text-shadow: none;
+            border: solid 1px #00994d;
         }
         #message p{
             display: inline;
             margin-top: 1rem;
         }
         .typed-cursor {
-        display: inline-block;
-        vertical-align: middle;
+            display: inline-block;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -95,14 +113,14 @@
         Your project will cost: <br>
         <span></span>
     </div>
-    <div id="start">
+    <!-- <div id="start">
         <div id="message">
             <p></p>
             <button class='bright' id="next">
                 siguiente
             </button>
         </div>
-    </div>
+    </div> -->
     <script src="p5.min.js"></script>
     <script src="matter.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
@@ -118,6 +136,6 @@
     <script src="blueCheese.js"></script>
     <script src="purpleCheese.js"></script>
     <script src="mygame.js"></script>
-    <script src="wizzard.js"></script>
+    <!-- <script src="wizzard.js"></script> -->
 </body>
 </html>
